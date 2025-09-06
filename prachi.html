@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>A Letter to Prachi ✨</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Merriweather:wght@300;400;700&display=swap');
+
+    body {
+      margin: 0;
+      font-family: 'Merriweather', serif;
+      background: linear-gradient(135deg, #fff1e6, #ffd6d6);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      overflow: hidden;
+      color: #3b2f2f;
+    }
+
+    .letter {
+      background: #fffdf9;
+      border: 2px solid #e0d3c2;
+      border-radius: 15px;
+      box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+      max-width: 700px;
+      padding: 50px;
+      line-height: 1.8;
+      position: relative;
+      overflow: hidden;
+    }
+
+    h1 {
+      font-family: 'Great Vibes', cursive;
+      font-size: 3.5em;
+      text-align: center;
+      margin-bottom: 25px;
+      color: #a0525c;
+      opacity: 0;
+      animation: fadeIn 2s forwards;
+    }
+
+    p {
+      font-size: 1.15em;
+      margin: 1em 0;
+      opacity: 0;
+      animation: typeWriter 4s steps(100) forwards;
+      white-space: pre-wrap;
+    }
+
+    .signature {
+      text-align: right;
+      font-family: 'Great Vibes', cursive;
+      font-size: 2em;
+      margin-top: 30px;
+      color: #7c3a47;
+      opacity: 0;
+      animation: fadeIn 2s 8s forwards;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes typeWriter {
+      from { width: 0; opacity: 0; }
+      to { width: 100%; opacity: 1; }
+    }
+
+    .wax-seal {
+      position: absolute;
+      bottom: -30px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: #b22222;
+      border-radius: 50%;
+      width: 65px;
+      height: 65px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      font-family: 'Great Vibes', cursive;
+      font-size: 1.6em;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+      animation: pulseSeal 2s infinite alternate;
+    }
+
+    @keyframes pulseSeal {
+      from { transform: translateX(-50%) scale(1); }
+      to { transform: translateX(-50%) scale(1.1); }
+    }
+
+    .floating-hearts {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      z-index: -1;
+    }
+
+    .floating-hearts span {
+      position: absolute;
+      bottom: -50px;
+      font-size: 2em;
+      color: rgba(255,20,147,0.7);
+      animation: floatUp 5s linear infinite;
+    }
+
+    @keyframes floatUp {
+      from { transform: translateY(0) scale(1); opacity: 1; }
+      to { transform: translateY(-100vh) scale(1.5); opacity: 0; }
+    }
+  </style>
+</head>
+<body>
+  <div class="letter">
+    <h1>Dear Prachi,</h1>
+    <p id="message">
+I may just be a stranger to you now, but sometimes even strangers are touched by the beauty of someone's soul.
+From the little I know, your sweetness and charm left an impression strong enough to inspire me to write this.
+
+This is not just a website, but a letter — a letter to let you know that the way you carry your grace and cuteness is rare,
+almost like a melody the world needs to hear. It's in the small things that true beauty shines, and you embody that perfectly.
+
+One day, I hope these words reach you not as a surprise, but as a warm smile that reminds you how special you truly are.
+Until then, this remains a quiet letter sealed in code, waiting for you to discover.
+    </p>
+    <div class="signature">Yours, Someone Who Admires You</div>
+    <div class="wax-seal">P</div>
+  </div>
+
+  <div class="floating-hearts"></div>
+
+  <script>
+    const heartsContainer = document.querySelector('.floating-hearts');
+    function createHeart() {
+      const heart = document.createElement('span');
+      heart.innerHTML = '❤️';
+      heart.style.left = Math.random() * 100 + 'vw';
+      heart.style.animationDuration = (3 + Math.random() * 5) + 's';
+      heartsContainer.appendChild(heart);
+      setTimeout(() => heart.remove(), 5000);
+    }
+    setInterval(createHeart, 500);
+  </script>
+</body>
+</html>
